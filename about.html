@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Section</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Full page background */
+    body {
+      background-image: url('image.jpg'); /* Replace with your image path */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #fff;
+    }
+
+    /* Custom styles for the about section */
+    #about {
+      position: relative;
+      padding: 80px 0;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
+      border-radius: 8px;
+      margin-top: 100px; /* Adds space from the top */
+    }
+
+    /* Styling the section title */
+    #about h2 {
+      background-color: rgba(0, 123, 255, 0.8);
+      padding: 20px;
+      border-radius: 8px;
+      font-size: 2.5rem;
+      font-weight: bold;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    /* Styling for the subtitle */
+    #about h4 {
+      font-size: 1.3rem;
+      font-weight: 300;
+      max-width: 800px;
+      margin: 0 auto 40px;
+    }
+
+    /* Styling for the genres and top track section */
+    #about .bg-warning {
+      background-color: #ffc107 !important;
+      border-radius: 8px;
+      padding: 25px;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    /* Adjustments for smaller screens */
+    @media (max-width: 768px) {
+      #about h2 {
+        font-size: 2rem;
+      }
+
+      #about h4 {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- About Section -->
+  <section id="about" class="container-fluid">
+    <!-- Overlay for darkening the background -->
+    <div class="overlay"></div>
+  
+    <h2 class="mb-4 p-3 bg-primary rounded">About Me</h2>
+    <h4 class="lead">Noli Rodenas, known professionally as NLEX, is a 20-year-old Electronic Music Producer from the Philippines...</h4>
+  
+    <div class="p-3 bg-warning rounded">
+      <h3><strong>Genres:</strong> Progressive House, Melodic Bass, Future Pop</h3>
+      <p><strong>Top Track:</strong> "Always With You" (ft. Chiayuyi)</p>
+    </div>
+  </section>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
