@@ -74,7 +74,7 @@
   
 /* Solid Teal Background for Navbar */
 .bg-solid-teal {
-  background-color: #008080; /* Solid Teal color */
+  background-color:#008080; /* Solid Teal color */
 }
 
 /* Navbar Toggler (Hamburger Button) */
@@ -191,14 +191,23 @@
   font-family: Arial, sans-serif;  /* Choose a font you like */
 }
 .music-img {
-  width: 50px;  /* Set the size of the icon */
-  height: 50px;
-  margin-right:70px;  /* Space between icon and text */
+  width: 60px;  /* Set the size of the icon */
+  height: 60px;
+  margin-right: 70px;  /* Space between icon and text */
   vertical-align: middle;  /* Align icon with text */
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.8)); /* Initial black glow */
+  animation: blackLightningEffect 1.5s infinite alternate;
 }
-.music-icon {
-  font-size: 25px; /* Font size for the text */
-  color: #333; /* Color of the text */
+@keyframes blackLightningEffect {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 1));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+  }
 }
   </style>
 </head>
@@ -324,7 +333,7 @@
 </div>
   <!-- Cards Section -->
 <section class="container mt-5">
-  <h2>NLEX Cards</h2>
+  <h2 class="alert text-center">NLEX Gallery</h2>
   <div class="row justify-content-center">
     <!-- Card 1 -->
     <div class="col-md-4 mb-4">
@@ -336,7 +345,6 @@
         </div>
       </div>
     </div>
-
     <!-- Card 2 -->
     <div class="col-md-4 mb-4">
       <div class="card shadow-lg border-0 rounded-4">
