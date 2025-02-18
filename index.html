@@ -70,33 +70,174 @@
     /* Table Style */
     .table th, .table td {
       text-align: center;
-    }
+  }
+  
+/* Solid Teal Background for Navbar */
+.bg-solid-teal {
+  background-color: #008080; /* Solid Teal color */
+}
+
+/* Navbar Toggler (Hamburger Button) */
+.custom-toggler {
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  transition: transform 0.3s ease;
+}
+
+.custom-toggler .bi {
+  font-size: 1.5rem; /* Adjust icon size */
+  color: white; /* Make the icon white */
+}
+
+/* Toggler on Focus or Active */
+.custom-toggler:focus,
+.custom-toggler:active {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Navbar Links */
+.navbar-nav .nav-link {
+  font-weight: 600; /* Slightly bolder font weight */
+  padding: 10px 15px; /* More spacing for better clickability */
+  color: white; /* White text color */
+  transition: color 0.3s ease, padding-left 0.3s ease; /* Smooth hover transitions */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #f8d210 !important; /* Accent yellow on hover */
+  padding-left: 20px; /* Slightly move links to the left on hover for a subtle effect */
+}
+
+/* Dropdown Menu */
+.nav-item.dropdown .dropdown-toggle::after {
+  display: inline-block;
+  margin-left: 5px;
+  content: '\f107'; /* Font Awesome caret down icon */
+  font-family: 'Font Awesome 5 Free'; 
+  font-weight: 900;
+  color: white; /* Caret color */
+}
+
+/* Dropdown Menu List */
+.dropdown-menu {
+  background-color: #008080; /* Teal background for dropdown */
+  border-radius: 5px;
+  border: none;
+  padding: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-item {
+  color: white; /* White text color for dropdown items */
+  padding: 10px 20px;
+  font-weight: 500;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+.dropdown-item:hover {
+  background-color: #f8d210; /* Yellow hover color */
+  color: #008080; /* Teal text on hover */
+}
+/* Button Styling */
+.btn-hover {
+  transition: all 0.3s ease-in-out;
+}
+.btn-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Buttons */
+.btn-outline-light {
+  border: 2px solid #fff;
+  color: white;
+}
+
+.btn-light {
+  color: #008080; /* Teal colored text */
+}
+
+.text-teal {
+  color: #008080 !important;
+}
+
+/* Navbar Collapse Animation */
+.navbar-collapse {
+  transition: all 0.4s ease-in-out;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+  .navbar-nav {
+    text-align: left; /* Align the nav links to the left on small screens */
+  }
+
+  .nav-link {
+    font-size: 1.1rem; /* Slightly larger text for better readability on mobile */
+    padding: 15px 20px; /* More padding for tap-ability */
+  }
+
+  .dropdown-menu {
+    width: 100%; /* Make dropdown full width on mobile */
+  }
+}
+.music-icon {
+  display: flex;
+  align-items: center;
+  font-family: Arial, sans-serif;  /* Choose a font you like */
+}
+.music-img {
+  width: 50px;  /* Set the size of the icon */
+  height: 50px;
+  margin-right:70px;  /* Space between icon and text */
+  vertical-align: middle;  /* Align icon with text */
+}
+.music-icon {
+  font-size: 25px; /* Font size for the text */
+  color: #333; /* Color of the text */
+}
   </style>
 </head>
 <body>
 <!-- Custom Navbar -->
-<nav class="navbar navbar-expand-md navbar-dark bg-teal shadow-sm sticky-top">
+<nav class="navbar navbar-expand-md navbar-dark bg-solid-teal shadow-sm sticky-top">
   <div class="container">
     <a class="navbar-brand fw-bold fs-4 text-uppercase" href="Index.html">
-      <i class="bi bi-music-note-beamed"></i> NLEX MUSIC
+      <div class="music-icon">
+  <img src="logo.png" alt="Music Icon" class="music-img"> NLEX MUSIC
+</div>
     </a>
-    <!-- Custom Animated Toggler -->
+    <!-- Updated Toggler Icon -->
     <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="toggler-icon"></span>
-      <span class="toggler-icon"></span>
-      <span class="toggler-icon"></span>
+      <i class="bi bi-music-note-list"></i> 
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav me-auto">
+      <ul class="navbar-nav">
         <li class="nav-item"><a class="nav-link fw-semibold px-3" href="about.html"><i class="bi bi-info-circle"></i> About</a></li>
         <li class="nav-item"><a class="nav-link fw-semibold px-3" href="#music"><i class="bi bi-music-note-list"></i> Music List</a></li>
         <li class="nav-item"><a class="nav-link fw-semibold px-3" href="#listen"><i class="bi bi-headphones"></i> Listen</a></li>
         <li class="nav-item"><a class="nav-link fw-semibold px-3" href="#upcoming"><i class="bi bi-calendar-event"></i> Upcoming</a></li>
         <li class="nav-item"><a class="nav-link fw-semibold px-3" href="#contact"><i class="bi bi-envelope"></i> Contact</a></li>
         <li class="nav-item"><a class="nav-link fw-semibold px-3" href="#faq"><i class="bi bi-question-circle"></i> FAQ</a></li>
-       <li class="nav-item"><a class="nav-link fw-semibold px-3" href="terms.html"><i class="bi bi-question-circle"></i>Terms and conditions</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold px-3" href="terms.html"><i class="bi bi-file-earmark-text"></i> Terms and Conditions</a></li>
+        <!-- Dropdown Menu More Item -->
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle fw-semibold px-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bi bi-caret-down-fill"></i> Digital Audio Workstation(DAW)
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <li><a class="dropdown-item" href="ablt.html"><i class="bi bi-file-earmark-music"></i> Ableton Live</a></li>
+        <li><a class="dropdown-item" href="FL.html"><i class="bi bi-file-earmark-music"></i> ImageLine FL Studio</a></li>
+        <li><a class="dropdown-item" href="lgc.html"><i class="bi bi-file-earmark-music"></i> Logic Pro</a></li>
+    </ul>
+</li>
+
       </ul>
-      <div class="d-flex">
+      <div class="d-flex ms-auto"> <!-- Use ms-auto to align buttons to the right -->
         <a href="sign-up.html" class="btn btn-outline-light me-2 rounded-pill btn-hover">
           <i class="bi bi-person-plus"></i> Sign Up
         </a>
@@ -107,63 +248,6 @@
     </div>
   </div>
 </nav>
-<!-- Custom CSS -->
-<style>
-  /* Teal Background */
-  .bg-teal {
-    background: linear-gradient(135deg, #008080, #20c997); /* Teal gradient */
-  }
-
-  /* Animated Hamburger Icon */
-  .custom-toggler {
-    border: none;
-    background: transparent;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    padding: 8px;
-  }
-  
-  .toggler-icon {
-    width: 30px;
-    height: 3px;
-    background-color: white;
-    transition: all 0.3s ease-in-out;
-  }
-
-  .custom-toggler:focus, .custom-toggler:active {
-    outline: none;
-    box-shadow: none;
-  }
-
-  /* Navbar Links */
-  .navbar-nav .nav-link {
-    transition: color 0.3s ease-in-out;
-  }
-  .navbar-nav .nav-link:hover {
-    color: #f8d210 !important; /* Accent yellow */
-  }
-
-  /* Button Hover Effect */
-  .btn-hover {
-    transition: all 0.3s ease-in-out;
-  }
-  .btn-hover:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
-  }
-
-  /* Teal-colored text for buttons */
-  .text-teal {
-    color: #008080 !important;
-  }
-
-  /* Smooth Dropdown */
-  .navbar-collapse {
-    transition: all 0.4s ease-in-out;
-  }
-</style>
-
 <!-- Upcoming Music Section -->
 <section id="upcoming" class="container section-padding">
   <h2 class="text-center mb-4 bg-primary text-white py-3 rounded">Upcoming Releases</h2>
@@ -258,8 +342,8 @@
       <div class="card shadow-lg border-0 rounded-4">
         <img src="Live.jpg" class="card-img-top rounded-top-4" alt="Live Performances" style="height: 220px; object-fit: cover;">
         <div class="card-body text-center">
-          <h5 class="card-title fw-bold">Live Performances</h5>
-          <p class="card-text alert alert-info">Bringing energy and emotions to the crowd.</p>
+          <h5 class="card-title fw-bold alert alert-info">Live Performances</h5>
+          <p class="card-text ">Bringing energy and emotions to the crowd.</p>
         </div>
       </div>
     </div>
@@ -501,4 +585,4 @@
   <p>© 2025 NLEX Music | All Rights Reserved</p>
 </footer>
 </body>
-            </html>
+</html>
