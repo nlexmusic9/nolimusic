@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ableton Live - NLEX MUSIC</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body {
+    background-image: url('fl.jpeg'); /* Replace with your background image path */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(8px);
+    z-index: -1;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.75); /* Darker for better contrast */
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 600px;
+    text-align: center;
+    margin-top: 100px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.btn-custom {
+    background-color: #FFD700;
+    border: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    padding: 12px 20px;
+    transition: background-color 0.3s, transform 0.2s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-custom:hover {
+    background-color: #ffcc00;
+    transform: scale(1.05);
+}
+
+.text-center a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="mb-4">Ableton Live</h1>
+        <p class="lead">Ableton Live is a software music sequencer and digital audio workstation. It’s known for its flexibility in live performances as well as for studio production. Ableton's intuitive workflow allows for both composition and performance without barriers.</p>
+
+        <div class="text-center">
+            <a href="https://www.ableton.com/" class="btn btn-custom">Visit Ableton Live Official Website</a>
+        </div>
+
+        <p class="mt-4 text-center"><a href="index.html" class="btn btn-custom">Back</a></p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
