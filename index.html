@@ -8,76 +8,22 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-
-  <style>
-    body {
-      font-family: "Inconsolata", sans-serif;
-      background-color: #f8f9fa;
-    }
-    .navbar-dark {
-      background-color: #222;
-    }
-    .section-padding {
-      padding: 80px 0;
-    }
-    .btn-hover:hover {
-      transform: scale(1.05);
-      transition: 0.3s ease-in-out;
-    }
-    /* Hero Section */
-    .hero
-      position: relative;
-      height: 80vh;
-      background: url('image1.jpg') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
-    .hero-overlay {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-    }
-    /* Cards */
-    .card {
-      transition: transform 0.3s ease-in-out;
-    }
-    .card:hover {
-      transform: translateY(-10px);
-    }
-    /* Contact Form */
-    .form-floating input, .form-floating textarea {
-      border-radius: 10px;
-    }
-    /* Footer */
-    .footer {
-      background-color: #222;
-      color: white;
-      padding: 20px 0;
-    }
-    /* Accordion */
-    .accordion-button:focus {
-      box-shadow: none;
-    }
-    /* Table Style */
-    .table th, .table td {
-      text-align: center;
-  }
-  
-/* Solid Teal Background for Navbar */
-.bg-solid-teal {
-  background-color:#008080; /* Solid Teal color */
+ <style>
+body {
+  font-family: "Inconsolata", sans-serif;
+  background-color: #f8f9fa;
 }
 
-/* Navbar Toggler (Hamburger Button) */
+/* Navbar */
+.navbar-dark {
+  background-color: #222;
+}
+
+.bg-solid-teal {
+  background-color: #008080; /* Solid Teal color */
+}
+
+/* Navbar Toggler */
 .custom-toggler {
   border: none;
   background: transparent;
@@ -93,7 +39,6 @@
   color: white; /* Make the icon white */
 }
 
-/* Toggler on Focus or Active */
 .custom-toggler:focus,
 .custom-toggler:active {
   outline: none;
@@ -102,30 +47,27 @@
 
 /* Navbar Links */
 .navbar-nav .nav-link {
-  font-weight: 600; /* Slightly bolder font weight */
-  padding: 10px 15px; /* More spacing for better clickability */
-  color: white; /* White text color */
-  transition: color 0.3s ease, padding-left 0.3s ease; /* Smooth hover transitions */
+  font-weight: 600;
+  padding: 10px 15px;
+  color: white;
+  transition: color 0.3s ease, padding-left 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover {
   color: #f8d210 !important; /* Accent yellow on hover */
-  padding-left: 20px; /* Slightly move links to the left on hover for a subtle effect */
+  padding-left: 20px;
 }
 
 /* Dropdown Menu */
 .nav-item.dropdown .dropdown-toggle::after {
-  display: inline-block;
-  margin-left: 5px;
-  content: '\f107'; /* Font Awesome caret down icon */
-  font-family: 'Font Awesome 5 Free'; 
+  content: '\f107';
+  font-family: 'Font Awesome 5 Free';
   font-weight: 900;
-  color: white; /* Caret color */
+  color: white;
 }
 
-/* Dropdown Menu List */
 .dropdown-menu {
-  background-color: #008080; /* Teal background for dropdown */
+  background-color: #008080;
   border-radius: 5px;
   border: none;
   padding: 0;
@@ -133,71 +75,119 @@
 }
 
 .dropdown-item {
-  color: white; /* White text color for dropdown items */
+  color: white;
   padding: 10px 20px;
   font-weight: 500;
   transition: color 0.3s ease, background-color 0.3s ease;
 }
+
 .dropdown-item:hover {
-  background-color: #f8d210; /* Yellow hover color */
-  color: #008080; /* Teal text on hover */
+  background-color: #f8d210;
+  color: #008080;
 }
-/* Button Styling */
+
+/* Section Padding */
+.section-padding {
+  padding: 60px 15px;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 80vh;
+  background: url('image1.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+}
+
+/* Cards */
+.card {
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* Contact Form */
+.form-floating input, .form-floating textarea {
+  border-radius: 10px;
+}
+
+/* Footer */
+.footer {
+  background-color: #222;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Accordion */
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+/* Table Styling */
+.table th, .table td {
+  text-align: center;
+}
+
+/* Buttons */
 .btn-hover {
   transition: all 0.3s ease-in-out;
 }
+
 .btn-hover:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
 }
 
-/* Buttons */
 .btn-outline-light {
   border: 2px solid #fff;
   color: white;
 }
 
 .btn-light {
-  color: #008080; /* Teal colored text */
+  color: #008080;
 }
 
 .text-teal {
   color: #008080 !important;
 }
 
-/* Navbar Collapse Animation */
-.navbar-collapse {
-  transition: all 0.4s ease-in-out;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 767px) {
-  .navbar-nav {
-    text-align: left; /* Align the nav links to the left on small screens */
-  }
-
-  .nav-link {
-    font-size: 1.1rem; /* Slightly larger text for better readability on mobile */
-    padding: 15px 20px; /* More padding for tap-ability */
-  }
-
-  .dropdown-menu {
-    width: 100%; /* Make dropdown full width on mobile */
-  }
-}
+/* Music Icon */
 .music-icon {
   display: flex;
   align-items: center;
-  font-family: Arial, sans-serif;  /* Choose a font you like */
+  font-family: Arial, sans-serif;
 }
+
 .music-img {
-  width: 60px;  /* Set the size of the icon */
+  width: 60px;
   height: 60px;
-  margin-right: 70px;  /* Space between icon and text */
-  vertical-align: middle;  /* Align icon with text */
-  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.8)); /* Initial black glow */
+  margin-right: 20px;
+  vertical-align: middle;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.8));
   animation: blackLightningEffect 1.5s infinite alternate;
 }
+
 @keyframes blackLightningEffect {
   0% {
     filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
@@ -209,7 +199,74 @@
     filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
   }
 }
-  </style>
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+  .hero {
+    height: 60vh;
+    padding: 40px 15px;
+  }
+
+  .section-padding {
+    padding: 50px 15px;
+  }
+
+  .music-img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-nav {
+    text-align: left;
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+    padding: 15px 20px;
+  }
+
+  .dropdown-menu {
+    width: 100%;
+  }
+
+  .hero {
+    height: 50vh;
+    padding: 30px 15px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .section-padding {
+    padding: 40px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 40vh;
+    padding: 20px 10px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .section-padding {
+    padding: 30px 10px;
+  }
+
+  .music-img {
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+  }
+}
+</style>
 </head>
 <body>
 <!-- Custom Navbar -->
@@ -220,7 +277,6 @@
   <img src="logo.png" alt="Music Icon" class="music-img"> NLEX MUSIC
 </div>
     </a>
-    <!-- Updated Toggler Icon -->
     <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <i class="bi bi-music-note-list"></i> 
     </button>
@@ -244,7 +300,6 @@
         <li><a class="dropdown-item" href="lgc.html"><i class="bi bi-file-earmark-music"></i> Logic Pro</a></li>
     </ul>
 </li>
-
       </ul>
       <div class="d-flex ms-auto"> <!-- Use ms-auto to align buttons to the right -->
         <a href="sign-up.html" class="btn btn-outline-light me-2 rounded-pill btn-hover">
@@ -559,38 +614,3 @@
 
 <!-- JS for Notifications -->
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const followBtn = document.getElementById("followBtn");
-        const followNotification = document.getElementById("followNotification");
-
-        if (followBtn && followNotification) {
-            followBtn.addEventListener("click", function () {
-                followNotification.classList.remove("d-none"); // Show notification
-                setTimeout(() => {
-                    followNotification.classList.add("d-none"); // Hide after 3 seconds
-                    window.location.href = "https://open.spotify.com/artist/2B1fSeyqDOgyXLXrWvERDx"; // Redirect to Spotify
-                }, 3000);
-            });
-        }
-        // Contact Form Notification
-        const contactForm = document.getElementById("contactForm");
-        const contactNotification = document.getElementById("contactNotification");
-        if (contactForm && contactNotification) {
-            contactForm.addEventListener("submit", function (event) {
-                event.preventDefault(); // Prevent form submission
-                contactNotification.classList.remove("d-none"); // Show notification
-                setTimeout(() => {
-                    contactNotification.classList.add("d-none"); // Hide after 3 seconds
-                }, 3000);
-                contactForm.reset(); // Reset form fields
-            });
-        }
-    });
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<!-- Footer -->
-<footer class="footer text-center mt-5">
-  <p>© 2025 NLEX Music | All Rights Reserved</p>
-</footer>
-</body>
-</html>
