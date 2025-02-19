@@ -1,1 +1,596 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NLEX Music Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+ <style>
+body {
+  font-family: "Inconsolata", sans-serif;
+  background-color: #f8f9fa;
+}
+/* Navbar */
+.navbar-dark {
+  background-color: #222;
+}
+.bg-solid-teal {
+  background-color: #008080; /* Solid Teal color */
+}
+/* Navbar Toggler */
+.custom-toggler {
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  transition: transform 0.3s ease;
+}
+.custom-toggler .bi {
+  font-size: 1.5rem; /* Adjust icon size */
+  color: white; /* Make the icon white */
+}
+.custom-toggler:focus,
+.custom-toggler:active {
+  outline: none;
+  box-shadow: none;
+}
+/* Navbar Links */
+.navbar-nav .nav-link {
+  font-weight: 600;
+  padding: 10px 15px;
+  color: white;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+}
+.navbar-nav .nav-link:hover {
+  color: #f8d210 !important; /* Accent yellow on hover */
+  padding-left: 20px;
+}
+/* Dropdown Menu */
+.nav-item.dropdown .dropdown-toggle::after {
+  content: '\f107';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: white;
+}
+.dropdown-menu {
+  background-color: #008080;
+  border-radius: 5px;
+  border: none;
+  padding: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.dropdown-item {
+  color: white;
+  padding: 10px 20px;
+  font-weight: 500;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+.dropdown-item:hover {
+  background-color: #f8d210;
+  color: #008080;
+}
+/* Section Padding */
+.section-padding {
+  padding: 60px 15px;
+}
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 80vh;
+  background: url('image1.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.hero-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+}
+/* Cards */
+.card {
+  transition: transform 0.3s ease-in-out;
+}
+.card:hover {
+  transform: translateY(-10px);
+}
+/* Contact Form */
+.form-floating input, .form-floating textarea {
+  border-radius: 10px;
+}
+/* Footer */
+.footer {
+  background-color: #222;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+/* Accordion */
+.accordion-button:focus {
+  box-shadow: none;
+}
+/* Table Styling */
+.table th, .table td {
+  text-align: center;
+}
+/* Buttons */
+.btn-hover {
+  transition: all 0.3s ease-in-out;
+}
+.btn-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+}
+.btn-outline-light {
+  border: 2px solid #fff;
+  color: white;
+}
+.btn-light {
+  color: #008080;
+}
+.text-teal {
+  color: #008080 !important;
+}
+/* Music Icon */
+.music-icon {
+  display: flex;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+.music-img {
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+  vertical-align: middle;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.8));
+  animation: blackLightningEffect 1.5s infinite alternate;
+}
 
+@keyframes blackLightningEffect {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 1));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+  }
+}
+/* Responsive Styles */
+@media (max-width: 991px) {
+  .hero {
+    height: 60vh;
+    padding: 40px 15px;
+  }
+  .section-padding {
+    padding: 50px 15px;
+  }
+  .music-img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+}
+@media (max-width: 767px) {
+  .navbar-nav {
+    text-align: left;
+  }
+  .nav-link {
+    font-size: 1.1rem;
+    padding: 15px 20px;
+  }
+  .dropdown-menu {
+    width: 100%;
+  }
+  .hero {
+    height: 50vh;
+    padding: 30px 15px;
+  }
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .section-padding {
+    padding: 40px 15px;
+  }
+}
+@media (max-width: 480px) {
+  .hero {
+    height: 40vh;
+    padding: 20px 10px;
+  }
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+  .section-padding {
+    padding: 30px 10px;
+  }
+  .music-img {
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+  }
+}
+</style>
+</head>
+<body>
+<!-- Custom Navbar -->
+<nav class="navbar navbar-expand-md navbar-dark bg-solid-teal shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold fs-4 text-uppercase" href="Index.html">
+      <div class="music-icon">
+  <img src="logo.png" alt="Music Icon" class="music-img"> NLEX MUSIC
+</div>
+    </a>
+    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <i class="bi bi-music-note-list"></i> 
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link fw-semibold px-3" href="about.html"><i class="bi bi-info-circle"></i> About</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold px-3" href="#music"><i class="bi bi-music-note-list"></i> Music List</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold px-3" href="#listen"><i class="bi bi-headphones"></i> Listen</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold px-3" href="#upcoming"><i class="bi bi-calendar-event"></i> Upcoming</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold px-3" href="#contact"><i class="bi bi-envelope"></i> Contact</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold px-3" href="#faq"><i class="bi bi-question-circle"></i> FAQ</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold px-3" href="terms.html"><i class="bi bi-file-earmark-text"></i> Terms and Conditions</a></li>
+        <!-- Dropdown Menu More Item -->
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle fw-semibold px-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bi bi-caret-down-fill"></i>DAW
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <li><a class="dropdown-item" href="ablt.html"><i class="bi bi-file-earmark-music"></i> Ableton Live</a></li>
+        <li><a class="dropdown-item" href="FL.html"><i class="bi bi-file-earmark-music"></i> ImageLine FL Studio</a></li>
+        <li><a class="dropdown-item" href="lgc.html"><i class="bi bi-file-earmark-music"></i> Logic Pro</a></li>
+    </ul>
+</li>
+      </ul>
+      <div class="d-flex ms-auto"> <!-- Use ms-auto to align buttons to the right -->
+        <a href="sign-up.html" class="btn btn-outline-light me-2 rounded-pill btn-hover">
+          <i class="bi bi-person-plus"></i> Sign Up
+        </a>
+        <a href="login.html" class="btn btn-light text-teal rounded-pill btn-hover">
+          <i class="bi bi-box-arrow-in-right"></i> Login
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- Upcoming Music Section -->
+<section id="upcoming" class="container section-padding">
+  <h2 class="text-center mb-4 bg-primary text-white py-3 rounded">Upcoming Releases</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-lg border-0">
+        <video class="card-img-top rounded-top" autoplay loop controls>
+          <source src="myvideo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="card-body text-center">
+          <h3 class="card-title text-danger fw-bold">No Upcoming Music</h3>
+          <p class="card-text text-muted">Stay tuned for future releases!</p>
+          <h3 class="card-text text-muted">Follow me for updates.</h3>
+          <button id="followBtn" class="btn btn-warning mt-2 alert alert-success">
+            Follow NLEX
+          </button>
+          <div id="notification" class="alert alert-success mt-3 d-none">
+            <div class="d-flex align-items-center">
+              <span class="me-2">Thank you for following NLEX Music! Redirecting on Spotify...</span>
+              <div class="spinner-border spinner-border-sm text-warm" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  document.getElementById("followBtn").addEventListener("click", function(event) {
+    event.preventDefault();
+    let notification = document.getElementById("notification");
+    notification.classList.remove("d-none");
+    setTimeout(() => {
+      window.location.href = "https://open.spotify.com/artist/2B1fSeyqDOgyXLXrWvERDx";
+    }, 3000);
+  });
+</script>
+<!-- pictures Carousel -->
+<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" style="background: url('image.jpg') center/cover; height: 80vh;">
+      <div class="carousel-caption text-white">
+        <h1 class="header-text">Welcome to My Website!</h1>
+        <p>Know About Me?</p>
+      </div>
+    </div>
+    <div class="carousel-item" style="background: url('images1.jpg') center/cover; height: 80vh;">
+      <div class="carousel-caption text-white">
+        <h1 class="header-text">NLEX MUSIC</h1>
+        <p>Music Producer</p>
+      </div>
+    </div>
+    <div class="carousel-item" style="background: url('toptracks.jpg') center/cover; height: 80vh;">
+      <div class="carousel-caption text-white">
+        <h1 class="header-text">NLEX MUSIC</h1>
+        <p class="text-shadow">Top Tracks!</p>
+    
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+  <!-- Cards Section -->
+<section class="container mt-5">
+  <h2 class="alert text-center">NLEX Gallery</h2>
+  <div class="row justify-content-center">
+    <!-- Card 1 -->
+    <div class="col-md-4 mb-4">
+      <div class="card shadow-lg border-0 rounded-4">
+        <img src="makingimage.jpg" class="card-img-top rounded-top-4" alt="Music Production" style="height: 220px; object-fit: cover;">
+        <div class="card-body text-center">
+          <h5 class="card-title fw-bold alert alert-info">Music Production</h5>
+          <p class="card-text">Creating electronic music with passion.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Card 2 -->
+    <div class="col-md-4 mb-4">
+      <div class="card shadow-lg border-0 rounded-4">
+        <img src="Live.jpg" class="card-img-top rounded-top-4" alt="Live Performances" style="height: 220px; object-fit: cover;">
+        <div class="card-body text-center">
+          <h5 class="card-title fw-bold alert alert-info">Live Performances</h5>
+          <p class="card-text ">Bringing energy and emotions to the crowd.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Card 3 -->
+    <div class="col-md-4 mb-4">
+      <div class="card shadow-lg border-0 rounded-4">
+        <img src="grads.jpg" class="card-img-top rounded-top-4" alt="MusixMatch Graduated" style="height: 220px; object-fit: cover;">
+        <div class="card-body text-center">
+          <h5 class="card-title fw-bold alert alert-info">MusixMatch Graduated</h5>
+          <p class="card-text">Achieving "Graduate" on Musixmatch. Top contributor & curator with a perfect score exam.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Card 4 -->
+    <div class="col-md-4 mb-4">
+      <div class="card shadow-lg border-0 rounded-4">
+        <img src="page.jpg" class="card-img-top rounded-top-4" alt="Artist Page" style="height: 220px; object-fit: cover;">
+        <div class="card-body text-center">
+          <h5 class="card-title fw-bold alert alert-info">Artist Page</h5>
+          <p class="card-text">When 'Always With You' was released, it gained 8k+ streams in a single day.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Music Section (Table) -->
+<section id="music" class="container section-padding text-center">
+  <h2 class="p-3 bg-primary alert alert-primary">NLEX Music List</h2>
+  <div class="table-responsive">
+    <table class="table table-striped table-hover table-bordered mt-4">
+      <thead>
+        <tr>
+          <th class="alert alert-info" scope="col">Track Name</th>
+          <th class="alert alert-info"scope="col">Release Date</th>
+          <th class="alert alert-info" scope="col">Genre</th>
+           <th class="alert alert-info"scope="col">Record Label</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>"I'm Enough"</td>
+          <td>Upcoming</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>"Always With You" (ft. Chiayuyi)</td>
+          <td>2024-11-22</td>
+          <td>Progressive House</td>
+          <td>Vozon Recods</td>
+        </tr>
+        <tr>
+         <td>"Don't Let Me Go"</td>
+          <td>2025-01-24</td>
+          <td>Ambient EDM</td>
+          <td>Oxmic Records</td>
+        </tr>
+        <tr>
+          <td>"Chasing Stars"</td>
+          <td>2024-05-06</td>
+          <td>Melodic Bass</td>
+          <td>Designated Records</td>
+        </tr>
+        <tr>
+        <tr>
+          <td>"Make It"</td>
+          <td>2024-03-31</td>
+          <td>Progressive House</td>
+          <td>Designated Records</td>
+        </tr>
+        <tr>
+          <td>"Alab"</td>
+          <td>2024-08-13</td>
+          <td>Electronic Pop</td>
+          <td>Mount Music Inc</td>
+        </tr>
+         <tr>
+          <td>"Higher Place"</td>
+          <td>2024-05-06</td>
+          <td>Progressive House</td>
+          <td>Designated Records</td>
+        </tr>
+        <tr>
+          <td>"Life"</td>
+          <td>2024-09-06</td>
+          <td>Electro Pop</td>
+          <td>Mount Music</td>
+        </tr>
+          <tr>
+          <td>"Peace of Mind"</td>
+          <td>2024-04-22</td>
+          <td>Future Progressive</td>
+          <td>Designated Records</td>
+        </tr>
+          <tr>
+          <td>"Dream"</td>
+          <td>2024-09-25</td>
+          <td>Electro EDM</td>
+          <td>Mount Music SC</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<!-- Listen Section -->
+<section id="listen" class="container section-padding text-center bg-light">
+  <h2 class="p-3 bg-primary">Listen on:</h2>
+  <div class="d-flex justify-content-center">
+    <a href="https://open.spotify.com/artist/2B1fSeyqDOgyXLXrWvERDx" class="btn btn-success btn-lg mx-2 btn-hover"><i class="fab fa-spotify"></i> Spotify</a>
+    <a href="https://music.apple.com/us/artist/nlex/1670314393" class="btn btn-danger btn-lg mx-2 btn-hover"><i class="fab fa-apple"></i> Apple Music</a>
+    <a href="https://on.soundcloud.com/XFPN2C6ARR1yCbfw5" class="btn btn-warning btn-lg mx-2 btn-hover"><i class="fab fa-soundcloud"></i> SoundCloud</a>
+  </div>
+</section>
+<!-- FAQ Section (Q & A) -->
+<section id="faq" class="container section-padding">
+  <h2 class="text-center mb-4 bg-secondary alert alert-primary">Frequently Asked Questions</h2>
+  <!-- Accordion -->
+  <div class="accordion" id="faqAccordion">
+    <!-- Question 1 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          What is NLEX Music?
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          NLEX Music is a music project created by Noli Rodenas, a music producer from the Philippines, specializing in electronic genres like Progressive House, Melodic Bass, and Future Pop.
+        </div>
+      </div>
+    </div>
+    <!-- Question 2 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Did NLEX study music production?
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          NLEX graduated from Musixmatch Academy in December 2023-2024. He also studied basic music theory at Music Gateway School. His passion for songwriting began in 2019 on his mobile phone, and through dedication and experimentation, he has developed the skills to create his own original tracks.
+        </div>
+      </div>
+    </div>
+    <!-- Question 3 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Is it hard to make your own music?
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Creating your own music can be challenging, especially for beginners. It requires a blend of creativity, technical skills, and patience.
+        </div>
+      </div>
+    </div>
+    <!-- Question 4 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingFour">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          What does NLEX do in his life?
+        </button>
+      </h2>
+      <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          NLEX is currently a second-year Information Technology student at Pinamalayan Maritime Foundation Technological College Incorporated (PMFTCI) while continuing to pursue his passion for music production.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="container mt-4">
+    <h3 class="text-center alert alert-info">Send Your Message</h3>
+    <form id="contactForm" class="mt-3">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+            <label for="name">Your Name</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+            <label for="email">Your Email</label>
+        </div>
+        <div class="form-floating mb-3">
+            <textarea class="form-control" id="message" placeholder="Your Message" rows="4" required></textarea>
+            <label for="message">Your Message</label>
+        </div>
+        <button type="submit" class="btn btn-dark w-100">Send Message</button>
+    </form>
+    <!-- Contact Notification (Initially Hidden) -->
+    <div id="contactNotification" class="alert alert-success mt-3 d-none" role="alert">
+        Your message has been sent to NLEX!
+    </div>
+</section>
+<!-- JS for Notifications -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const followBtn = document.getElementById("followBtn");
+        const followNotification = document.getElementById("followNotification");
+
+        if (followBtn && followNotification) {
+            followBtn.addEventListener("click", function () {
+                followNotification.classList.remove("d-none"); // Show notification
+                setTimeout(() => {
+                    followNotification.classList.add("d-none"); // Hide after 3 seconds
+                    window.location.href = "https://open.spotify.com/artist/2B1fSeyqDOgyXLXrWvERDx"; // Redirect to Spotify
+                }, 3000);
+            });
+        }
+        // Contact Form Notification
+        const contactForm = document.getElementById("contactForm");
+        const contactNotification = document.getElementById("contactNotification");
+        if (contactForm && contactNotification) {
+            contactForm.addEventListener("submit", function (event) {
+                event.preventDefault(); // Prevent form submission
+                contactNotification.classList.remove("d-none"); // Show notification
+                setTimeout(() => {
+                    contactNotification.classList.add("d-none"); // Hide after 3 seconds
+                }, 3000);
+                contactForm.reset();
+            });
+        }
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- Footer -->
+<footer class="footer text-center mt-5">
+  <p>© 2025 NLEX Music | All Rights Reserved</p>
+</footer>
+</body>
+</html>
