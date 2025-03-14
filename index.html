@@ -273,27 +273,32 @@ body {
   </div>
 </nav>
 <!-- Upcoming Music Section -->
-<section id="upcoming" class="container section-padding">
+ <section id="upcoming" class="container-fluid py-5">
   <h2 class="text-center mb-4 bg-primary text-white py-3 rounded">Upcoming Releases</h2>
   <div class="row justify-content-center">
-    <div class="col-md-6">
-      <div class="card shadow-lg border-0">
-        <video class="card-img-top rounded-top" autoplay loop controls>
-          <source src="#" type="video/mp4">
+    <!-- Card Container -->
+    <div class="col-80 col-md-50 col-lg-4">
+      <div class="card shadow-lg border-0 rounded-lg overflow-hidden">
+        <!-- Video Element -->
+        <video class="card-img-top" autoplay loop controls>
+          <source src="tonight.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-                        <div class="card-body text-center">
-          <h3 class="card-title text-info fw-bold">No Upcoming Music</h3>
-          <p class="card-text text-muted"></p>
-          <p class="card-text text-muted"></p>
-            <h3 class="card-text text-muted"></h3>
-          <h3 class="card-text text-muted"></h3>
-          <button id="followBtn" class="btn btn-warning mt-2 alert alert-info">
+        <div class="card-body text-center">
+          <!-- Title and Info -->
+          <h3 class="card-title text-info fw-bold">New Upcoming Music!</h3>
+          <p class="card-text text-muted">Title: I'm Enough</p>
+          <p class="card-text text-muted">Label: Vozon Records</p>
+          <h5 class="card-text text-muted">Album:I'm Enough</h5>
+          <h5 class="card-text text-muted">Release Date: 11th April</h5>
+          <!-- Follow Button -->
+          <button id="followBtn" class="btn btn-primary mt-3">
             Follow NLEX
           </button>
-          <div id="notification" class="alert alert-success mt-3 d-none">
+          <!-- Notification -->
+          <div id="notification" class="alert alert-info mt-3 d-none">
             <div class="d-flex align-items-center">
-              <span class="me-2">Thank you for following NLEX Music! Redirecting on Spotify...</span>
+              <span class="me-2">Following NLEX Music! Redirecting to Spotify...</span>
               <div class="spinner-border spinner-border-sm text-warm" role="status">
                 <span class="visually-hidden">Loading...</span>
               </div>
@@ -303,7 +308,7 @@ body {
       </div>
     </div>
   </div>
-</section>
+ </section>
 <script>
   document.getElementById("followBtn").addEventListener("click", function(event) {
     event.preventDefault();
